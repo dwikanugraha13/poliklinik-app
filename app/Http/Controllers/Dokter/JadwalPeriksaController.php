@@ -65,10 +65,8 @@ class JadwalPeriksaController extends Controller
 
     public function destroy(string )
     {
-         = JadwalPeriksa::find();
-        if () {
-            ->delete();
-        }
+         = JadwalPeriksa::findOrFail();
+        ->delete();
 
         return redirect()->route('jadwal-periksa.index');
     }

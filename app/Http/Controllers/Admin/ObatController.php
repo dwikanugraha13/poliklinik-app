@@ -62,10 +62,8 @@ class ObatController extends Controller
 
     public function destroy(string )
     {
-         = Obat::find();
-        if () {
-            ->delete();
-        }
+         = Obat::findOrFail();
+        ->delete();
 
         return redirect()->route('obat.index');
     }
