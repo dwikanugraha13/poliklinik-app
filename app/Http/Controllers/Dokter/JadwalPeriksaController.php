@@ -23,6 +23,12 @@ class JadwalPeriksaController extends Controller
 
     public function store(Request )
     {
+        ->validate([
+            'hari' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required'
+        ]);
+
         JadwalPeriksa::create([
             'id_dokter' => Auth::id(),
             'hari' => ->hari,
@@ -41,6 +47,12 @@ class JadwalPeriksaController extends Controller
 
     public function update(Request , string )
     {
+        ->validate([
+            'hari' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required'
+        ]);
+
          = JadwalPeriksa::findOrFail();
         ->update([
             'hari' => ->hari,
